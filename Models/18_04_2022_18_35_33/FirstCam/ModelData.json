@@ -1,0 +1,74 @@
+{
+  "result": false,
+  "model_name": "18_04_2022_18_35_33",
+  "camera_exposer": 21100.0,
+  "TemplateImagePath": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\18_04_2022_18_35_33\\FirstCam\\Template18_04_2022_18_35_56.bmp",
+  "OriginalImagePath": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\18_04_2022_18_35_33\\FirstCam\\Original18_04_2022_18_35_56.bmp",
+  "CheckTemplate": [
+    {
+      "List": [
+        {
+          "nodeName": "MatchScore",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "TempThreshold",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "BinaryThreshold",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "ShiftToleranceX",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        },
+        {
+          "nodeName": "ShiftToleranceY",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        }
+      ],
+      "tempRegion": {
+        "point_x": 82,
+        "point_y": 36,
+        "imageWidth": 172,
+        "imageHeight": 264,
+        "template_image_path": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\18_04_2022_18_35_33\\FirstCam\\tempcheck18_04_2022_18_36_05.bmp"
+      },
+      "MatchScore": 99.0,
+      "TempThreshold": 85.0,
+      "BinaryThreshold": 50.0,
+      "template_image_path": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\18_04_2022_18_35_33\\FirstCam\\tempcheck18_04_2022_18_36_05.bmp",
+      "ShiftToleranceX": 10.0,
+      "ShiftToleranceY": 10.0
+    }
+  ],
+  "CheckCheckEdges": [],
+  "TemplateCoordinate": {
+    "point_x": 366,
+    "point_y": 385,
+    "imageWidth": 700,
+    "imageHeight": 352,
+    "template_image_path": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\18_04_2022_18_35_33\\FirstCam\\Template18_04_2022_18_35_56.bmp"
+  }
+}

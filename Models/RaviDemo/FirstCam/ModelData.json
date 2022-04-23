@@ -1,0 +1,191 @@
+{
+  "result": false,
+  "model_name": "RaviDemo",
+  "camera_exposer": 11100.0,
+  "TemplateImagePath": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\RaviDemo\\FirstCam\\Template20_04_2022_15_04_51.bmp",
+  "OriginalImagePath": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\RaviDemo\\FirstCam\\Original20_04_2022_15_04_50.bmp",
+  "CheckTemplate": [
+    {
+      "List": [
+        {
+          "nodeName": "MatchScore",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "TempThreshold",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "BinaryThreshold",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "ShiftToleranceX",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        },
+        {
+          "nodeName": "ShiftToleranceY",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        }
+      ],
+      "tempRegion": {
+        "point_x": 33,
+        "point_y": 22,
+        "imageWidth": 156,
+        "imageHeight": 232,
+        "template_image_path": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\RaviDemo\\FirstCam\\tempcheck20_04_2022_15_05_13.bmp"
+      },
+      "MatchScore": 99.0,
+      "TempThreshold": 85.0,
+      "BinaryThreshold": 50.0,
+      "template_image_path": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\RaviDemo\\FirstCam\\tempcheck20_04_2022_15_05_13.bmp",
+      "ShiftToleranceX": 10.0,
+      "ShiftToleranceY": 10.0
+    },
+    {
+      "List": [
+        {
+          "nodeName": "MatchScore",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "TempThreshold",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "BinaryThreshold",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "ShiftToleranceX",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        },
+        {
+          "nodeName": "ShiftToleranceY",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        }
+      ],
+      "tempRegion": {
+        "point_x": 383,
+        "point_y": 20,
+        "imageWidth": 144,
+        "imageHeight": 232,
+        "template_image_path": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\RaviDemo\\FirstCam\\tempcheck20_04_2022_15_05_42.bmp"
+      },
+      "MatchScore": 99.0,
+      "TempThreshold": 85.0,
+      "BinaryThreshold": 50.0,
+      "template_image_path": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\RaviDemo\\FirstCam\\tempcheck20_04_2022_15_05_42.bmp",
+      "ShiftToleranceX": 10.0,
+      "ShiftToleranceY": 10.0
+    }
+  ],
+  "CheckCheckEdges": [
+    {
+      "edgeRegion": {
+        "point_x": 0,
+        "point_y": 0,
+        "imageWidth": 0,
+        "imageHeight": 0,
+        "template_image_path": null
+      },
+      "List": [
+        {
+          "nodeName": "AngleTolerance",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 3.0
+        },
+        {
+          "nodeName": "Angle",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "EdgeThreshold",
+          "nodeRange": [
+            2.0,
+            228.0
+          ],
+          "nodeVal": 40.0
+        },
+        {
+          "nodeName": "Polarity",
+          "nodeRange": [
+            0.0,
+            3.0
+          ],
+          "nodeVal": 2.0
+        },
+        {
+          "nodeName": "Strength",
+          "nodeRange": [
+            0.0,
+            2.0
+          ],
+          "nodeVal": 1.0
+        }
+      ],
+      "angleTolerance": 0.0,
+      "angle": 0.0,
+      "threshold": 0.0,
+      "distance": 0.0,
+      "distanceTolerance": 0.0,
+      "polarity": 0.0,
+      "strength": 0.0,
+      "direction": 0
+    }
+  ],
+  "TemplateCoordinate": {
+    "point_x": 399,
+    "point_y": 415,
+    "imageWidth": 556,
+    "imageHeight": 260,
+    "template_image_path": "D:\\salcomp_project_v2\\ChargerVivo\\SalcompTwoCam\\Models\\RaviDemo\\FirstCam\\Template20_04_2022_15_04_51.bmp"
+  }
+}
