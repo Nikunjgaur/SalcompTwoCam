@@ -40,15 +40,21 @@ namespace SalcompTwoCam
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowReport = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.comboBoxCamCode = new System.Windows.Forms.ComboBox();
+            this.buttonSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(33, 111);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(668, 497);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -94,7 +100,7 @@ namespace SalcompTwoCam
             // 
             this.timePickerStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timePickerStart.Location = new System.Drawing.Point(816, 221);
+            this.timePickerStart.Location = new System.Drawing.Point(816, 43);
             this.timePickerStart.Name = "timePickerStart";
             this.timePickerStart.Size = new System.Drawing.Size(130, 29);
             this.timePickerStart.TabIndex = 1;
@@ -104,7 +110,7 @@ namespace SalcompTwoCam
             // 
             this.timePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timePickerEnd.Location = new System.Drawing.Point(816, 264);
+            this.timePickerEnd.Location = new System.Drawing.Point(816, 86);
             this.timePickerEnd.Name = "timePickerEnd";
             this.timePickerEnd.Size = new System.Drawing.Size(130, 29);
             this.timePickerEnd.TabIndex = 1;
@@ -115,7 +121,7 @@ namespace SalcompTwoCam
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(749, 221);
+            this.label3.Location = new System.Drawing.Point(749, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 24);
             this.label3.TabIndex = 2;
@@ -127,7 +133,7 @@ namespace SalcompTwoCam
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(749, 264);
+            this.label4.Location = new System.Drawing.Point(749, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 24);
             this.label4.TabIndex = 2;
@@ -137,10 +143,11 @@ namespace SalcompTwoCam
             // buttonShowReport
             // 
             this.buttonShowReport.BackColor = System.Drawing.Color.White;
+            this.buttonShowReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonShowReport.Location = new System.Drawing.Point(774, 320);
+            this.buttonShowReport.Location = new System.Drawing.Point(816, 278);
             this.buttonShowReport.Name = "buttonShowReport";
-            this.buttonShowReport.Size = new System.Drawing.Size(160, 50);
+            this.buttonShowReport.Size = new System.Drawing.Size(130, 50);
             this.buttonShowReport.TabIndex = 3;
             this.buttonShowReport.Text = "Show Report";
             this.buttonShowReport.UseVisualStyleBackColor = false;
@@ -156,6 +163,31 @@ namespace SalcompTwoCam
             this.label5.TabIndex = 4;
             this.label5.Text = "Report Page";
             // 
+            // comboBoxCamCode
+            // 
+            this.comboBoxCamCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCamCode.FormattingEnabled = true;
+            this.comboBoxCamCode.Items.AddRange(new object[] {
+            "First Cam",
+            "Second Cam"});
+            this.comboBoxCamCode.Location = new System.Drawing.Point(816, 215);
+            this.comboBoxCamCode.Name = "comboBoxCamCode";
+            this.comboBoxCamCode.Size = new System.Drawing.Size(139, 32);
+            this.comboBoxCamCode.TabIndex = 5;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.White;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSave.Location = new System.Drawing.Point(816, 343);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(130, 50);
+            this.buttonSave.TabIndex = 3;
+            this.buttonSave.Text = "Save Report";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
             // ReportPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,7 +196,9 @@ namespace SalcompTwoCam
             this.BackgroundImage = global::SalcompTwoCam.Properties.Resources.Black_and_Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(981, 724);
+            this.Controls.Add(this.comboBoxCamCode);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonShowReport);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -179,6 +213,7 @@ namespace SalcompTwoCam
             this.MaximumSize = new System.Drawing.Size(997, 763);
             this.MinimumSize = new System.Drawing.Size(997, 763);
             this.Name = "ReportPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportPage";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportPage_FormClosing);
             this.Load += new System.EventHandler(this.ReportPage_Load);
@@ -201,5 +236,7 @@ namespace SalcompTwoCam
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonShowReport;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBoxCamCode;
+        private System.Windows.Forms.Button buttonSave;
     }
 }

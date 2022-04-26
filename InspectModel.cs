@@ -41,6 +41,10 @@ namespace SalcompTwoCam
         int ngCount1 = 0;
         int ngCount2 = 0;
 
+        UnitReport _UnitReport = new UnitReport();
+        UnitReport _UnitReport2 = new UnitReport();
+
+
         int connectAllCams(int expectedCamCnt)
         {
             camController = new HRcamFns();
@@ -133,6 +137,11 @@ namespace SalcompTwoCam
         delegate void SetTextCallback(string text);
         private void ImageCallBack(IntPtr pData, ref MyCamera.MV_FRAME_OUT_INFO_EX pFrameInfo, IntPtr pUser)
         {
+
+            _UnitReport.Timestamp = DateTime.Now;
+            _UnitReport2.Timestamp = DateTime.Now;
+
+
             int nIndex = (int)pUser;
 
             // ch:抓取的帧数 | en:Aquired Frame Number
@@ -211,6 +220,9 @@ namespace SalcompTwoCam
             {
                 if (nIndex == 0 && modelResult1 != "")
                 {
+                    _UnitReport.DateTimeStart = DateTime.Now;
+
+                    _UnitReport.SerialNumber = "1234";
 
                     Bitmap bitmap = (Bitmap)grabbedImageColor.Clone();
 
@@ -234,7 +246,10 @@ namespace SalcompTwoCam
                 }
                 if(nIndex != 0 && modelResult2 != "")
                 {
-                    
+                    _UnitReport2.DateTimeStart = DateTime.Now;
+                    _UnitReport.SerialNumber = "5678";
+
+
                     Bitmap bitmap = (Bitmap)grabbedImageColor.Clone();
 
                     //Console.WriteLine("Model Data Results2 {0}", modelResult2);
@@ -265,6 +280,7 @@ namespace SalcompTwoCam
                         labelOkCam1.Invoke(new Action(() => labelOkCam1.Text = okCount1.ToString()));
                         
                         camController.SetOutput(ref m_pMyCamera[0]);
+                        _UnitReport.StatusCode = "PASS";
 
 
                     }
@@ -279,14 +295,17 @@ namespace SalcompTwoCam
                         camController.SetOutput(ref m_pMyCamera[0]);
                         Thread.Sleep(150);
                         camController.SetOutput(ref m_pMyCamera[0]);
+                        _UnitReport.StatusCode = "FAIL";
+
 
                     }
 
                     db.InsertRecord(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), Convert.ToDateTime(DateTime.Now.ToString("HH:mm:ss")),
-                    textBoxModelNum1.Text, textBoxSrNum.Text, "Def Code", Convert.ToInt32(modelData1.result));
+                    modelName, textBoxSrNum.Text, "Def Code", "First Cam",Convert.ToInt32(modelData1.result));
+                    _UnitReport.DateTimeEnd = DateTime.Now;
 
                 }
-                if(nIndex != 0 && modelResult2 != "")
+                if (nIndex != 0 && modelResult2 != "")
                 {
                     if (modelData2.result)
                     {
@@ -296,6 +315,7 @@ namespace SalcompTwoCam
                         buttonResultCam2.Invoke(new Action(() => buttonResultCam2.BackColor = Color.LimeGreen));
                         labelOkCount.Invoke(new Action(() => labelOkCount.Text = okCount2.ToString()));
                         camController.SetOutput(ref m_pMyCamera[1]);
+                        _UnitReport2.StatusCode = "PASS";
 
                     }
                     else
@@ -309,18 +329,24 @@ namespace SalcompTwoCam
                         camController.SetOutput(ref m_pMyCamera[1]);
                         Thread.Sleep(150);
                         camController.SetOutput(ref m_pMyCamera[1]);
+                        _UnitReport2.StatusCode = "FAIL";
+
                     }
 
                     db.InsertRecord(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), Convert.ToDateTime(DateTime.Now.ToString("HH:mm:ss")),
-                    textBoxModelNum2.Text, textBoxSrNum2.Text, "Def Code", Convert.ToInt32(modelData2.result));
+                    modelName, textBoxSrNum2.Text, "Def Code", "Second Cam",Convert.ToInt32(modelData2.result));
+
                 }
+
+
+
 
                 labelTotalCam1.Invoke(new Action(() => labelTotalCam1.Text = totalInspected.ToString()));
                 labelTotalCount.Invoke(new Action(() => labelTotalCount.Text = totalInspected.ToString()));
 
                 
-                
-
+                ServiceUtils.save_unit_xml(_UnitReport);
+                ServiceUtils.save_unit_xml(_UnitReport2);
 
             }
             catch (Exception ex)
@@ -422,13 +448,16 @@ namespace SalcompTwoCam
                 camerasStarted = true;
                 // Settings
                 cb_model_name.SelectedIndex = 0;
+                modelName = cb_model_name.SelectedItem.ToString();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 MessageBox.Show("Default Model not found. Select model before inspection");
             }
-            
+
+            GlobalItems._LogInModel.Xml_location = @"D:\salcomp_project_v2\";
+
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
@@ -447,7 +476,6 @@ namespace SalcompTwoCam
             labelNgCam1.Text = "0";
 
             
-            
             //File.WriteAllText(path + @"\ModelData.json", modelResult);
         }
 
@@ -459,10 +487,14 @@ namespace SalcompTwoCam
 
         }
 
+        string modelName = "";
+
         private void cb_model_name_SelectedIndexChanged(object sender, EventArgs e)
         {
             modelResult1 = "";
             modelResult2 = "";
+
+            modelName = cb_model_name.SelectedItem.ToString();
 
             string path = string.Format(@"{0}\Models\{1}\FirstCam\ModelData.json", CommonParameters.projectDirectory, cb_model_name.SelectedItem.ToString());
 
@@ -564,6 +596,16 @@ namespace SalcompTwoCam
 
             camController.SetOutput(ref m_pMyCamera[1]);
 
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Forms.loginPage == null)
+            {
+                Forms.loginPage = new LoginPage();
+                Forms.loginPage.ShowDialog();
+            }
+            
         }
     }
 }

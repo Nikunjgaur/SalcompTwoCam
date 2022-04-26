@@ -38,7 +38,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toleranceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inspectionLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -151,7 +150,6 @@
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.toleranceToolStripMenuItem,
             this.exitToolStripMenuItem,
             this.inspectionLogToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
@@ -165,14 +163,7 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(202, 30);
             this.fileToolStripMenuItem.Text = "XML path";
-            // 
-            // toleranceToolStripMenuItem
-            // 
-            this.toleranceToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toleranceToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
-            this.toleranceToolStripMenuItem.Name = "toleranceToolStripMenuItem";
-            this.toleranceToolStripMenuItem.Size = new System.Drawing.Size(202, 30);
-            this.toleranceToolStripMenuItem.Text = "Settings";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -669,7 +660,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toleranceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inspectionLogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createModelToolStripMenuItem;

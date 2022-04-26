@@ -28,6 +28,6 @@ namespace SalcompTwoCam
         public static ReportPage reportPage = null;
         public static EditModel editModel = null;
         public static RegisterModel registerModel = null;
-
+        public static LoginPage loginPage = null;
     }
 }

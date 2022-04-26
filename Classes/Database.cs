@@ -17,7 +17,7 @@ namespace SalcompTwoCam
         // Process process = new Process();
 
         public void InsertRecord(DateTime date, DateTime time, string modelnum, string serialnum,
-                               string defcode, int result)
+                               string defcode, string camCode,int result)
         {
 
            
@@ -26,8 +26,8 @@ namespace SalcompTwoCam
             {
 
                 string query = @"insert into public.chargerdatabase (_date, _time, modelnum, srnum, 
-                                code, _result)
-                                values(@date, @time, @modelnumum, @srnum, @defcode, @result)";
+                                code, camcode,_result)
+                                values(@date, @time, @modelnumum, @srnum, @defcode, @camcode, @result)";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(query, con);
 
@@ -36,6 +36,7 @@ namespace SalcompTwoCam
                 cmd.Parameters.AddWithValue("@modelnumum", modelnum);
                 cmd.Parameters.AddWithValue("@srnum", serialnum);
                 cmd.Parameters.AddWithValue("@defcode", defcode);
+                cmd.Parameters.AddWithValue("@camcode", camCode);
                 cmd.Parameters.AddWithValue("@result", result);
                 
                 con.Open();

@@ -43,4 +43,37 @@ namespace SalcompTwoCam
         }
 
     }
+    public class LogInModel
+    {
+
+
+
+        [JsonProperty("Operatorusername")]
+        public string Operatorusername { get; set; } = "operator";
+
+        [JsonProperty("Operatorpassword")]
+        public string Operatorpassword { get; set; } = "operator";
+
+        [JsonProperty("AdminUsername")]
+        public string AdminUsername { get; set; } = "admin";
+
+
+        [JsonProperty("Adminpassword")]
+        public string Adminpassword { get; set; } = "admin";
+
+        [JsonProperty("Engineerusername")]
+        public string Engineerusername { get; set; } = "engineer";
+
+
+
+        [JsonProperty("Engineerpassword")]
+        public string Engineerpassword { get; set; } = "engineer";
+
+
+        [JsonProperty("Xml_location")]
+        public string Xml_location { get; set; } = "NoSet";
+
+
+
+    }
 }

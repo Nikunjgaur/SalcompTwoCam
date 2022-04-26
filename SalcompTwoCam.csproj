@@ -126,16 +126,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CommonParameters.cs" />
+    <Compile Include="Classes\ExtensionMethods.cs" />
+    <Compile Include="Classes\GlobalItems.cs" />
     <Compile Include="Classes\HRcam.cs" />
     <Compile Include="Classes\Model.cs" />
+    <Compile Include="Classes\ServiceUtils.cs" />
     <Compile Include="Classes\Tools.cs" />
+    <Compile Include="Classes\UnitReport.cs" />
+    <Compile Include="Classes\XmlModel.cs" />
     <Compile Include="CreateModel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateModel.Designer.cs">
       <DependentUpon>CreateModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database.cs" />
+    <Compile Include="Classes\Database.cs" />
     <Compile Include="EditModel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +158,12 @@
     </Compile>
     <Compile Include="InspectModel.Designer.cs">
       <DependentUpon>InspectModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InspectModel.resx">
       <DependentUpon>InspectModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -219,7 +233,5 @@
   <ItemGroup>
     <None Include="Resources\black rect.png" />
   </ItemGroup>
-  
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- 
 </Project>
