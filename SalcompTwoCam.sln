@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalcompTwoCam", "SalcompTwoCam.csproj", "{7C917B7F-DEC2-4A51-8DE6-40FFABB7D535}"
+	ProjectSection(ProjectDependencies) = postProject
+		{334955A6-A2DA-45CF-93F9-97E7528C4F9B} = {334955A6-A2DA-45CF-93F9-97E7528C4F9B}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AlgoCpp", "AlgoCpp\AlgoCpp.vcxproj", "{334955A6-A2DA-45CF-93F9-97E7528C4F9B}"
 EndProject

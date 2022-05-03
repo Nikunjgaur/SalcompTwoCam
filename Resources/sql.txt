@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS public.chargerdatabase
+(
+    _date date,
+    _time time without time zone,
+    modelnum character varying COLLATE pg_catalog."default",
+    srnum character varying COLLATE pg_catalog."default",
+    code character varying COLLATE pg_catalog."default",
+    _result integer,
+    camcode character varying COLLATE pg_catalog."default"
+)

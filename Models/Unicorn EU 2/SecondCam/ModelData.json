@@ -1,0 +1,131 @@
+{
+  "result": false,
+  "model_name": "Unicorn EU 2",
+  "camera_exposer": 11100.0,
+  "TemplateImagePath": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Unicorn EU 2\\SecondCam\\Template27_04_2022_14_24_42.bmp",
+  "OriginalImagePath": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Unicorn EU 2\\SecondCam\\Original27_04_2022_14_24_42.bmp",
+  "CheckTemplate": [
+    {
+      "List": [
+        {
+          "nodeName": "MatchScore",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "TempThreshold",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "BinaryThreshold",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "ShiftToleranceX",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        },
+        {
+          "nodeName": "ShiftToleranceY",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        }
+      ],
+      "tempRegion": {
+        "point_x": 37,
+        "point_y": 30,
+        "imageWidth": 116,
+        "imageHeight": 172,
+        "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Unicorn EU 2\\SecondCam\\tempcheck27_04_2022_14_25_02.bmp"
+      },
+      "MatchScore": 85.0,
+      "TempThreshold": 85.0,
+      "BinaryThreshold": 0.0,
+      "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Unicorn EU 2\\SecondCam\\tempcheck27_04_2022_14_25_02.bmp",
+      "ShiftToleranceX": 10.0,
+      "ShiftToleranceY": 10.0
+    },
+    {
+      "List": [
+        {
+          "nodeName": "MatchScore",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "TempThreshold",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "BinaryThreshold",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "ShiftToleranceX",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        },
+        {
+          "nodeName": "ShiftToleranceY",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        }
+      ],
+      "tempRegion": {
+        "point_x": 347,
+        "point_y": 26,
+        "imageWidth": 116,
+        "imageHeight": 172,
+        "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Unicorn EU 2\\SecondCam\\tempcheck27_04_2022_14_25_21.bmp"
+      },
+      "MatchScore": 99.0,
+      "TempThreshold": 85.0,
+      "BinaryThreshold": 0.0,
+      "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Unicorn EU 2\\SecondCam\\tempcheck27_04_2022_14_25_21.bmp",
+      "ShiftToleranceX": 10.0,
+      "ShiftToleranceY": 10.0
+    }
+  ],
+  "CheckCheckEdges": [],
+  "TemplateCoordinate": {
+    "point_x": 434,
+    "point_y": 417,
+    "imageWidth": 476,
+    "imageHeight": 220,
+    "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Unicorn EU 2\\SecondCam\\Template27_04_2022_14_24_42.bmp"
+  }
+}

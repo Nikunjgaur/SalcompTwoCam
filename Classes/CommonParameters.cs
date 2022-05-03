@@ -29,5 +29,6 @@ namespace SalcompTwoCam
         public static EditModel editModel = null;
         public static RegisterModel registerModel = null;
         public static LoginPage loginPage = null;
+        public static DeleteModelPage deleteModelPage = null;
     }
 }

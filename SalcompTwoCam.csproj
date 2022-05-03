@@ -141,6 +141,12 @@
       <DependentUpon>CreateModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Database.cs" />
+    <Compile Include="DeleteModelPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteModelPage.Designer.cs">
+      <DependentUpon>DeleteModelPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditModel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </Compile>
     <EmbeddedResource Include="CreateModel.resx">
       <DependentUpon>CreateModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteModelPage.resx">
+      <DependentUpon>DeleteModelPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditModel.resx">
       <DependentUpon>EditModel.cs</DependentUpon>

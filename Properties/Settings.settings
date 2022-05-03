@@ -5,5 +5,8 @@
     <Setting Name="SelectedModel" Type="System.String" Scope="User">
       <Value Profile="(Default)">159</Value>
     </Setting>
+    <Setting Name="xmlpath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\\XMLFiles\\</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

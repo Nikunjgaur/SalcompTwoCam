@@ -1,0 +1,191 @@
+{
+  "result": false,
+  "model_name": "vip",
+  "camera_exposer": 11100.0,
+  "TemplateImagePath": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\vip\\SecondCam\\Template27_04_2022_13_41_07.bmp",
+  "OriginalImagePath": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\vip\\SecondCam\\Original27_04_2022_13_41_07.bmp",
+  "CheckTemplate": [
+    {
+      "List": [
+        {
+          "nodeName": "MatchScore",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "TempThreshold",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "BinaryThreshold",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "ShiftToleranceX",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        },
+        {
+          "nodeName": "ShiftToleranceY",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        }
+      ],
+      "tempRegion": {
+        "point_x": 16,
+        "point_y": 36,
+        "imageWidth": 120,
+        "imageHeight": 180,
+        "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\vip\\SecondCam\\tempcheck27_04_2022_13_41_15.bmp"
+      },
+      "MatchScore": 85.0,
+      "TempThreshold": 85.0,
+      "BinaryThreshold": 0.0,
+      "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\vip\\SecondCam\\tempcheck27_04_2022_13_41_15.bmp",
+      "ShiftToleranceX": 10.0,
+      "ShiftToleranceY": 10.0
+    },
+    {
+      "List": [
+        {
+          "nodeName": "MatchScore",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "TempThreshold",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "BinaryThreshold",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "ShiftToleranceX",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        },
+        {
+          "nodeName": "ShiftToleranceY",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        }
+      ],
+      "tempRegion": {
+        "point_x": 317,
+        "point_y": 32,
+        "imageWidth": 140,
+        "imageHeight": 180,
+        "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\vip\\SecondCam\\tempcheck27_04_2022_13_41_23.bmp"
+      },
+      "MatchScore": 99.0,
+      "TempThreshold": 85.0,
+      "BinaryThreshold": 0.0,
+      "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\vip\\SecondCam\\tempcheck27_04_2022_13_41_23.bmp",
+      "ShiftToleranceX": 10.0,
+      "ShiftToleranceY": 10.0
+    }
+  ],
+  "CheckCheckEdges": [
+    {
+      "edgeRegion": {
+        "point_x": 114,
+        "point_y": 109,
+        "imageWidth": 20,
+        "imageHeight": 56,
+        "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\vip\\SecondCam\\edgecheck27_04_2022_13_41_35.bmp"
+      },
+      "List": [
+        {
+          "nodeName": "AngleTolerance",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 3.0
+        },
+        {
+          "nodeName": "Angle",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "EdgeThreshold",
+          "nodeRange": [
+            2.0,
+            228.0
+          ],
+          "nodeVal": 40.0
+        },
+        {
+          "nodeName": "Polarity",
+          "nodeRange": [
+            0.0,
+            3.0
+          ],
+          "nodeVal": 2.0
+        },
+        {
+          "nodeName": "Strength",
+          "nodeRange": [
+            0.0,
+            2.0
+          ],
+          "nodeVal": 1.0
+        }
+      ],
+      "angleTolerance": 0.0,
+      "angle": 0.0,
+      "threshold": 40.0,
+      "distance": 0.0,
+      "distanceTolerance": 0.0,
+      "polarity": 2.0,
+      "strength": 1.0,
+      "direction": 0
+    }
+  ],
+  "TemplateCoordinate": {
+    "point_x": 467,
+    "point_y": 420,
+    "imageWidth": 472,
+    "imageHeight": 264,
+    "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\vip\\SecondCam\\Template27_04_2022_13_41_07.bmp"
+  }
+}

@@ -25,9 +25,12 @@ namespace SalcompTwoCam
             var create_ico_new = new Bitmap(create_ico, new Size(100, 100));
             var edit_ico = new Bitmap(String.Format(@"{0}\Resources\edit.png", CommonParameters.projectDirectory));
             var edit_ico_new = new Bitmap(edit_ico, new Size(100, 100));
+            var del_ico = new Bitmap(String.Format(@"{0}\Resources\delete.png", CommonParameters.projectDirectory));
+            var del_ico_new = new Bitmap(del_ico, new Size(100, 100));
             buttonInspect.Image = ins_ico_new;
             buttonCreate.Image = create_ico_new;
             buttonEdit.Image = edit_ico_new;
+            buttonDelModel.Image = del_ico_new;
         }
 
         
@@ -69,6 +72,19 @@ namespace SalcompTwoCam
             else
             {
                 Forms.editModel.BringToFront();
+            }
+        }
+
+        private void buttonDelModel_Click(object sender, EventArgs e)
+        {
+            if (Forms.deleteModelPage == null)
+            {
+                Forms.deleteModelPage = new DeleteModelPage();
+                Forms.deleteModelPage.Show();
+            }
+            else
+            {
+                Forms.deleteModelPage.BringToFront();
             }
         }
     }

@@ -247,7 +247,7 @@ namespace SalcompTwoCam
                 if(nIndex != 0 && modelResult2 != "")
                 {
                     _UnitReport2.DateTimeStart = DateTime.Now;
-                    _UnitReport.SerialNumber = "5678";
+                    _UnitReport2.SerialNumber = "5678";
 
 
                     Bitmap bitmap = (Bitmap)grabbedImageColor.Clone();
@@ -337,8 +337,6 @@ namespace SalcompTwoCam
                     modelName, textBoxSrNum2.Text, "Def Code", "Second Cam",Convert.ToInt32(modelData2.result));
 
                 }
-
-
 
 
                 labelTotalCam1.Invoke(new Action(() => labelTotalCam1.Text = totalInspected.ToString()));
@@ -456,7 +454,7 @@ namespace SalcompTwoCam
                 MessageBox.Show("Default Model not found. Select model before inspection");
             }
 
-            GlobalItems._LogInModel.Xml_location = @"D:\salcomp_project_v2\";
+            GlobalItems._LogInModel.Xml_location = @"D:\XMLPath";
 
         }
 

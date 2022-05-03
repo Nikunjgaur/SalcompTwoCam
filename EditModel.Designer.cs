@@ -578,7 +578,6 @@ namespace SalcompTwoCam
             this.comboBoxCam.Name = "comboBoxCam";
             this.comboBoxCam.Size = new System.Drawing.Size(184, 32);
             this.comboBoxCam.TabIndex = 79;
-            this.comboBoxCam.SelectedIndexChanged += new System.EventHandler(this.cb_model_name_SelectedIndexChanged);
             // 
             // panelPbZoom
             // 

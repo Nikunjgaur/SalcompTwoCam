@@ -294,6 +294,8 @@ namespace SalcompTwoCam
             connectAllCams(2);
             try
             {
+                comboBoxCam.SelectedIndex = 0;
+
                 Console.WriteLine("Path {0}", string.Format(@"{0}\Models\", CommonParameters.projectDirectory));
                 DirectoryInfo obj = new DirectoryInfo(string.Format(@"{0}\Models\", CommonParameters.projectDirectory));
                 DirectoryInfo[] folders = obj.GetDirectories();
@@ -309,7 +311,6 @@ namespace SalcompTwoCam
                 Console.WriteLine(ex.Message);
                 MessageBox.Show("Default Model not found. Select model before inspection");
             }
-            comboBoxCam.SelectedIndex = 0;
         }
 
         private void cb_model_name_SelectedIndexChanged(object sender, EventArgs e)

@@ -1,0 +1,131 @@
+{
+  "result": false,
+  "model_name": "Akash",
+  "camera_exposer": 11100.0,
+  "TemplateImagePath": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Akash\\FirstCam\\Template27_04_2022_14_45_41.bmp",
+  "OriginalImagePath": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Akash\\FirstCam\\Original27_04_2022_14_45_41.bmp",
+  "CheckTemplate": [
+    {
+      "List": [
+        {
+          "nodeName": "MatchScore",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "TempThreshold",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "BinaryThreshold",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "ShiftToleranceX",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        },
+        {
+          "nodeName": "ShiftToleranceY",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        }
+      ],
+      "tempRegion": {
+        "point_x": 28,
+        "point_y": 21,
+        "imageWidth": 140,
+        "imageHeight": 180,
+        "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Akash\\FirstCam\\tempcheck27_04_2022_14_45_50.bmp"
+      },
+      "MatchScore": 85.0,
+      "TempThreshold": 85.0,
+      "BinaryThreshold": 0.0,
+      "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Akash\\FirstCam\\tempcheck27_04_2022_14_45_50.bmp",
+      "ShiftToleranceX": 10.0,
+      "ShiftToleranceY": 10.0
+    },
+    {
+      "List": [
+        {
+          "nodeName": "MatchScore",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "TempThreshold",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "BinaryThreshold",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "ShiftToleranceX",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        },
+        {
+          "nodeName": "ShiftToleranceY",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        }
+      ],
+      "tempRegion": {
+        "point_x": 350,
+        "point_y": 15,
+        "imageWidth": 136,
+        "imageHeight": 176,
+        "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Akash\\FirstCam\\tempcheck27_04_2022_14_46_03.bmp"
+      },
+      "MatchScore": 99.0,
+      "TempThreshold": 85.0,
+      "BinaryThreshold": 0.0,
+      "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Akash\\FirstCam\\tempcheck27_04_2022_14_46_03.bmp",
+      "ShiftToleranceX": 10.0,
+      "ShiftToleranceY": 10.0
+    }
+  ],
+  "CheckCheckEdges": [],
+  "TemplateCoordinate": {
+    "point_x": 362,
+    "point_y": 395,
+    "imageWidth": 524,
+    "imageHeight": 232,
+    "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\Akash\\FirstCam\\Template27_04_2022_14_45_41.bmp"
+  }
+}
