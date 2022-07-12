@@ -1,0 +1,74 @@
+{
+  "result": false,
+  "model_name": "04_06_2022_11_02_38",
+  "camera_exposer": 11100.0,
+  "TemplateImagePath": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\04_06_2022_11_02_38\\SecondCam\\Template04_06_2022_11_05_34.bmp",
+  "OriginalImagePath": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\04_06_2022_11_02_38\\SecondCam\\Original04_06_2022_11_05_34.bmp",
+  "CheckTemplate": [
+    {
+      "List": [
+        {
+          "nodeName": "MatchScore",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "TempThreshold",
+          "nodeRange": [
+            1.0,
+            100.0
+          ],
+          "nodeVal": 85.0
+        },
+        {
+          "nodeName": "BinaryThreshold",
+          "nodeRange": [
+            1.0,
+            128.0
+          ],
+          "nodeVal": 50.0
+        },
+        {
+          "nodeName": "ShiftToleranceX",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        },
+        {
+          "nodeName": "ShiftToleranceY",
+          "nodeRange": [
+            5.0,
+            128.0
+          ],
+          "nodeVal": 10.0
+        }
+      ],
+      "tempRegion": {
+        "point_x": 374,
+        "point_y": 32,
+        "imageWidth": 132,
+        "imageHeight": 188,
+        "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\04_06_2022_11_02_38\\SecondCam\\tempcheck04_06_2022_11_06_07.bmp"
+      },
+      "MatchScore": 99.0,
+      "TempThreshold": 85.0,
+      "BinaryThreshold": 0.0,
+      "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\04_06_2022_11_02_38\\SecondCam\\tempcheck04_06_2022_11_06_07.bmp",
+      "ShiftToleranceX": 10.0,
+      "ShiftToleranceY": 10.0
+    }
+  ],
+  "CheckCheckEdges": [],
+  "TemplateCoordinate": {
+    "point_x": 413,
+    "point_y": 451,
+    "imageWidth": 512,
+    "imageHeight": 248,
+    "template_image_path": "D:\\salcomp_project_v2\\SalcompTwoCam\\Models\\04_06_2022_11_02_38\\SecondCam\\Template04_06_2022_11_05_34.bmp"
+  }
+}

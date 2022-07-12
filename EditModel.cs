@@ -885,6 +885,7 @@ namespace SalcompTwoCam
                 File.WriteAllText(path + @"\ModelData.json", modelResult);
                 tools_option_gb.Visible = false;
                 MessageBox.Show("Model Saved Successfully.");
+
             }
             else
             {
@@ -901,7 +902,65 @@ namespace SalcompTwoCam
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Delete selected tool ?", "Confirmation",
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (cb_region_name.SelectedIndex > -1)
+                {
+                    try
+                    {
 
+                        pictureBoxZoom.Image = templateImage;
+                        switch (selectedTool)
+                        {
+                            case "Temp":
+
+                                modelData1.CheckTemplates.RemoveAt(index);
+
+                                break;
+                            case "Edge":
+
+                                modelData1.CheckEdges.RemoveAt(index);
+
+                                break;
+                            default:
+                                break;
+                        }
+
+
+                        cb_region_name.Items.Clear();
+
+                        Bitmap bitmap = new Bitmap(modelData1.TemplateImagePath);
+                        templateImage = (Bitmap)bitmap.Clone();
+
+                        for (int i = 0; i < modelData1.CheckTemplates.Count; i++)
+                        {
+                            cb_region_name.Items.Add(string.Format("Template {0}", i + 1));
+                        }
+                        for (int i = 0; i < modelData1.CheckEdges.Count; i++)
+                        {
+                            cb_region_name.Items.Add(string.Format("Edge {0}", i + 1));
+
+                        }
+
+                        pictureBoxZoom.Image = bitmap;
+                        cb_region_name.SelectedIndex = 0;
+
+                        startPoint = new Point(0, 0);
+                        endPoint = new Point(0, 0);
+                        pictureBoxZoom.Invalidate();
+                        loaded = true;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+           
+            
         }
 
         Bitmap testImage;

@@ -218,134 +218,151 @@ namespace SalcompTwoCam
             Bitmap grabbedImageRet = grabbedImage[nIndex].Clone(rect, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             try
             {
-                if (nIndex == 0 && modelResult1 != "")
+                if (doInspection)
                 {
-                    _UnitReport.DateTimeStart = DateTime.Now;
 
-                    _UnitReport.SerialNumber = "1234";
-
-                    Bitmap bitmap = (Bitmap)grabbedImageColor.Clone();
-
-                    //Console.WriteLine("Model Data Results1 {0}", modelResult1);
-
-                    if (saveImages1.Checked)
+                    if (nIndex == 0 && modelResult1 != "")
                     {
-                        string path = string.Format(@"{0}\Models\{1}\FirstCam\Images\{2}.bmp",
-                        CommonParameters.projectDirectory, cb_model_name.SelectedItem.ToString(), DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss"));
+                        _UnitReport.DateTimeStart = DateTime.Now;
 
-                        grabbedImageColor.Save(path);
+                        _UnitReport.SerialNumber = "1234";
+
+                        Bitmap bitmap = (Bitmap)grabbedImageColor.Clone();
+
+                        //Console.WriteLine("Model Data Results1 {0}", modelResult1);
+
+                        if (saveImages1.Checked)
+                        {
+                            string path = string.Format(@"{0}\Models\{1}\FirstCam\Images\{2}.bmp",
+                            CommonParameters.projectDirectory, cb_model_name.SelectedItem.ToString(), DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss"));
+
+                            grabbedImageColor.Save(path);
+                        }
+
+
+                        modelData1 = JsonConvert.DeserializeObject<Model>(salcomCpp1.ProcessImage(bitmap, modelResult1, 0));
+
+
+                        picboxOne.Image = bitmap;
+                        // this.Refresh();
+
                     }
+                    if (nIndex != 0 && modelResult2 != "")
+                    {
+                        _UnitReport2.DateTimeStart = DateTime.Now;
+                        _UnitReport2.SerialNumber = "5678";
+
+
+                        Bitmap bitmap = (Bitmap)grabbedImageColor.Clone();
+
+                        //Console.WriteLine("Model Data Results2 {0}", modelResult2);
+
+                        modelData2 = JsonConvert.DeserializeObject<Model>(salcomCpp2.ProcessImage(bitmap, modelResult2, 1));
+
+                        if (saveImages2.Checked)
+                        {
+                            string path = string.Format(@"{0}\Models\{1}\SecondCam\Images\{2}.bmp",
+                            CommonParameters.projectDirectory, cb_model_name.SelectedItem.ToString(), DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss"));
+                            grabbedImageColor.Save(path);
+                        }
+
+                        pictureBoxTwo.Image = bitmap;
+                    }
+                    //    grabbedImageColor.Save("imageCam" + nIndex + ".bmp");
+                    //  m_pMyCamera[nIndex].MV_CC_DisplayOneFrame_NET(ref stDisplayInfo);
+                    if (nIndex == 0 && modelResult1 != "")
+                    {
+
+                        if (modelData1.result)
+                        {
+                            okCount1++;
+                            totalInspected++;
+
+                            buttonResultCam1.Invoke(new Action(() => buttonResultCam1.Text = "OK"));
+                            buttonResultCam1.Invoke(new Action(() => buttonResultCam1.BackColor = Color.LimeGreen));
+                            labelOkCam1.Invoke(new Action(() => labelOkCam1.Text = okCount1.ToString()));
+
+                            camController.SetOutput(ref m_pMyCamera[0]);
+                            Console.WriteLine("Single trigger cam 1");
+                            _UnitReport.StatusCode = "PASS";
+
+
+                        }
+                        else
+                        {
+                            ngCount1++;
+                            totalInspected++;
+                            buttonResultCam1.Invoke(new Action(() => buttonResultCam1.Text = "Ng"));
+                            buttonResultCam1.Invoke(new Action(() => buttonResultCam1.BackColor = Color.Red));
+                            labelNgCam1.Invoke(new Action(() => labelNgCam1.Text = ngCount1.ToString()));
+
+                            camController.SetOutput(ref m_pMyCamera[0]);
+                            Thread.Sleep(150);
+                            camController.SetOutput(ref m_pMyCamera[0]);
+                            _UnitReport.StatusCode = "FAIL";
+                            Console.WriteLine("Double trigger cam 1");
+
+
+
+                        }
+
+                        db.InsertRecord(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), Convert.ToDateTime(DateTime.Now.ToString("HH:mm:ss")),
+                        modelName, textBoxSrNum.Text, "Def Code", "First Cam", Convert.ToInt32(modelData1.result));
+                        _UnitReport.DateTimeEnd = DateTime.Now;
+
+                    }
+                    if (nIndex != 0 && modelResult2 != "")
+                    {
+                        if (modelData2.result)
+                        {
+                            okCount2++;
+                            totalInspected++;
+                            buttonResultCam2.Invoke(new Action(() => buttonResultCam2.Text = "OK"));
+                            buttonResultCam2.Invoke(new Action(() => buttonResultCam2.BackColor = Color.LimeGreen));
+                            labelOkCount.Invoke(new Action(() => labelOkCount.Text = okCount2.ToString()));
+                            camController.SetOutput(ref m_pMyCamera[1]);
+                            Console.WriteLine("Single trigger cam 2");
+
+                            _UnitReport2.StatusCode = "PASS";
+
+                        }
+                        else
+                        {
+                            ngCount2++;
+                            totalInspected++;
+                            buttonResultCam2.Invoke(new Action(() => buttonResultCam2.Text = "Ng"));
+                            buttonResultCam2.Invoke(new Action(() => buttonResultCam2.BackColor = Color.Red));
+                            labelNgCount.Invoke(new Action(() => labelNgCount.Text = ngCount2.ToString()));
+
+                            camController.SetOutput(ref m_pMyCamera[1]);
+                            Thread.Sleep(150);
+                            camController.SetOutput(ref m_pMyCamera[1]);
+                            _UnitReport2.StatusCode = "FAIL";
+                            Console.WriteLine("Double trigger cam 2");
+
+
+                        }
+
+                        db.InsertRecord(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), Convert.ToDateTime(DateTime.Now.ToString("HH:mm:ss")),
+                        modelName, textBoxSrNum2.Text, "Def Code", "Second Cam", Convert.ToInt32(modelData2.result));
+                        labelTotalCam1.Invoke(new Action(() => labelTotalCam1.Text = totalInspected.ToString()));
+                        labelTotalCount.Invoke(new Action(() => labelTotalCount.Text = totalInspected.ToString()));
+
+
+                        ServiceUtils.save_unit_xml(_UnitReport);
+                        ServiceUtils.save_unit_xml(_UnitReport2);
+                    }
+                    
+
 
                     
-                    modelData1 = JsonConvert.DeserializeObject<Model>(salcomCpp1.ProcessImage(bitmap, modelResult1, 0));
-
-                    
-                    picboxOne.Image = bitmap;
-                    // this.Refresh();
-
                 }
-                if(nIndex != 0 && modelResult2 != "")
+                else
                 {
-                    _UnitReport2.DateTimeStart = DateTime.Now;
-                    _UnitReport2.SerialNumber = "5678";
-
-
-                    Bitmap bitmap = (Bitmap)grabbedImageColor.Clone();
-
-                    //Console.WriteLine("Model Data Results2 {0}", modelResult2);
-
-                    modelData2 = JsonConvert.DeserializeObject<Model>(salcomCpp2.ProcessImage(bitmap, modelResult2, 1));
-                    
-                    if (saveImages2.Checked)
-                    {
-                        string path = string.Format(@"{0}\Models\{1}\SecondCam\Images\{2}.bmp",
-                        CommonParameters.projectDirectory, cb_model_name.SelectedItem.ToString(), DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss"));
-                        grabbedImageColor.Save(path);
-                    }
-
-                    pictureBoxTwo.Image = bitmap;
+                    camController.SetOutput(ref m_pMyCamera[0]);
+                    camController.SetOutput(ref m_pMyCamera[1]);
+                    Console.WriteLine("Force ok trigger active");
                 }
-                //    grabbedImageColor.Save("imageCam" + nIndex + ".bmp");
-                //  m_pMyCamera[nIndex].MV_CC_DisplayOneFrame_NET(ref stDisplayInfo);
-                if (nIndex == 0 && modelResult1 != "")
-                {
-
-                    if (modelData1.result)
-                    {
-                        okCount1++;
-                        totalInspected++;
-
-                        buttonResultCam1.Invoke(new Action(() => buttonResultCam1.Text = "OK"));
-                        buttonResultCam1.Invoke(new Action(() => buttonResultCam1.BackColor = Color.LimeGreen));
-                        labelOkCam1.Invoke(new Action(() => labelOkCam1.Text = okCount1.ToString()));
-                        
-                        camController.SetOutput(ref m_pMyCamera[0]);
-                        _UnitReport.StatusCode = "PASS";
-
-
-                    }
-                    else
-                    {
-                        ngCount1++;
-                        totalInspected++;
-                        buttonResultCam1.Invoke(new Action(() => buttonResultCam1.Text = "Ng"));
-                        buttonResultCam1.Invoke(new Action(() => buttonResultCam1.BackColor = Color.Red));
-                        labelNgCam1.Invoke(new Action(() => labelNgCam1.Text = ngCount1.ToString()));
-                        
-                        camController.SetOutput(ref m_pMyCamera[0]);
-                        Thread.Sleep(150);
-                        camController.SetOutput(ref m_pMyCamera[0]);
-                        _UnitReport.StatusCode = "FAIL";
-
-
-                    }
-
-                    db.InsertRecord(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), Convert.ToDateTime(DateTime.Now.ToString("HH:mm:ss")),
-                    modelName, textBoxSrNum.Text, "Def Code", "First Cam",Convert.ToInt32(modelData1.result));
-                    _UnitReport.DateTimeEnd = DateTime.Now;
-
-                }
-                if (nIndex != 0 && modelResult2 != "")
-                {
-                    if (modelData2.result)
-                    {
-                        okCount2++;
-                        totalInspected++;
-                        buttonResultCam2.Invoke(new Action(() => buttonResultCam2.Text = "OK"));
-                        buttonResultCam2.Invoke(new Action(() => buttonResultCam2.BackColor = Color.LimeGreen));
-                        labelOkCount.Invoke(new Action(() => labelOkCount.Text = okCount2.ToString()));
-                        camController.SetOutput(ref m_pMyCamera[1]);
-                        _UnitReport2.StatusCode = "PASS";
-
-                    }
-                    else
-                    {
-                        ngCount2++;
-                        totalInspected++;
-                        buttonResultCam2.Invoke(new Action(() => buttonResultCam2.Text = "Ng"));
-                        buttonResultCam2.Invoke(new Action(() => buttonResultCam2.BackColor = Color.Red));
-                        labelNgCount.Invoke(new Action(() => labelNgCount.Text = ngCount2.ToString()));
-                        
-                        camController.SetOutput(ref m_pMyCamera[1]);
-                        Thread.Sleep(150);
-                        camController.SetOutput(ref m_pMyCamera[1]);
-                        _UnitReport2.StatusCode = "FAIL";
-
-                    }
-
-                    db.InsertRecord(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), Convert.ToDateTime(DateTime.Now.ToString("HH:mm:ss")),
-                    modelName, textBoxSrNum2.Text, "Def Code", "Second Cam",Convert.ToInt32(modelData2.result));
-
-                }
-
-
-                labelTotalCam1.Invoke(new Action(() => labelTotalCam1.Text = totalInspected.ToString()));
-                labelTotalCount.Invoke(new Action(() => labelTotalCount.Text = totalInspected.ToString()));
-
-                
-                ServiceUtils.save_unit_xml(_UnitReport);
-                ServiceUtils.save_unit_xml(_UnitReport2);
-
             }
             catch (Exception ex)
             {
@@ -455,7 +472,7 @@ namespace SalcompTwoCam
             }
 
             GlobalItems._LogInModel.Xml_location = @"D:\XMLPath";
-
+            buttonStart_Click(sender, e);
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
@@ -587,11 +604,20 @@ namespace SalcompTwoCam
 
         private void label4_Click(object sender, EventArgs e)
         {
+            camController.SetOutput(ref m_pMyCamera[0]);
+            camController.SetOutput(ref m_pMyCamera[1]);
+
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
 
+            camController.SetOutput(ref m_pMyCamera[0]);
+            Thread.Sleep(150);
+            camController.SetOutput(ref m_pMyCamera[0]);
+
+            camController.SetOutput(ref m_pMyCamera[1]);
+            Thread.Sleep(150);
             camController.SetOutput(ref m_pMyCamera[1]);
 
         }
@@ -604,6 +630,22 @@ namespace SalcompTwoCam
                 Forms.loginPage.ShowDialog();
             }
             
+        }
+
+        bool doInspection = false;
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            doInspection = true;
+            buttonStart.Enabled = false;
+            buttonStop.Enabled = true;
+
+        }
+
+        private void buttonStop_Click(object sender, EventArgs e)
+        {
+            doInspection = false;
+            buttonStart.Enabled = true;
+            buttonStop.Enabled = false;
         }
     }
 }

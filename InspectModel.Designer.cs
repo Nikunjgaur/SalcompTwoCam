@@ -60,8 +60,8 @@
             this.labelTotalCount = new System.Windows.Forms.Label();
             this.btn_reset = new System.Windows.Forms.Button();
             this.pictureBoxTwo = new System.Windows.Forms.PictureBox();
-            this.BTN_STAR = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonStart = new System.Windows.Forms.Button();
+            this.buttonStop = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxSrNum = new System.Windows.Forms.TextBox();
             this.textBoxModelNum1 = new System.Windows.Forms.TextBox();
@@ -80,6 +80,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtQue2 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTwo)).BeginInit();
@@ -369,34 +371,35 @@
             this.pictureBoxTwo.TabIndex = 2;
             this.pictureBoxTwo.TabStop = false;
             // 
-            // BTN_STAR
+            // buttonStart
             // 
-            this.BTN_STAR.BackColor = System.Drawing.Color.ForestGreen;
-            this.BTN_STAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_STAR.ForeColor = System.Drawing.Color.White;
-            this.BTN_STAR.Location = new System.Drawing.Point(672, 158);
-            this.BTN_STAR.Name = "BTN_STAR";
-            this.BTN_STAR.Size = new System.Drawing.Size(111, 43);
-            this.BTN_STAR.TabIndex = 62;
-            this.BTN_STAR.Text = "START";
-            this.BTN_STAR.UseVisualStyleBackColor = false;
-            this.BTN_STAR.Click += new System.EventHandler(this.BTN_STAR_Click);
+            this.buttonStart.BackColor = System.Drawing.Color.ForestGreen;
+            this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStart.ForeColor = System.Drawing.Color.White;
+            this.buttonStart.Location = new System.Drawing.Point(672, 158);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(111, 43);
+            this.buttonStart.TabIndex = 62;
+            this.buttonStart.Text = "START";
+            this.buttonStart.UseVisualStyleBackColor = false;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
-            // button1
+            // buttonStop
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkRed;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(797, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 43);
-            this.button1.TabIndex = 63;
-            this.button1.Text = "STOP";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonStop.BackColor = System.Drawing.Color.DarkRed;
+            this.buttonStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStop.ForeColor = System.Drawing.Color.White;
+            this.buttonStop.Location = new System.Drawing.Point(797, 158);
+            this.buttonStop.Name = "buttonStop";
+            this.buttonStop.Size = new System.Drawing.Size(120, 43);
+            this.buttonStop.TabIndex = 63;
+            this.buttonStop.Text = "STOP";
+            this.buttonStop.UseVisualStyleBackColor = false;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Controls.Add(this.textBoxSrNum);
@@ -407,11 +410,11 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.labelTotalCam1);
             this.panel1.Controls.Add(this.labelTotalCount);
-            this.panel1.Controls.Add(this.BTN_STAR);
+            this.panel1.Controls.Add(this.buttonStart);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonStop);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.labelOkCam1);
             this.panel1.Controls.Add(this.labelOkCount);
@@ -615,6 +618,28 @@
             this.label5.Text = "Second Cam";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // txtQue2
+            // 
+            this.txtQue2.AutoSize = true;
+            this.txtQue2.BackColor = System.Drawing.Color.Transparent;
+            this.txtQue2.Location = new System.Drawing.Point(1054, 132);
+            this.txtQue2.Name = "txtQue2";
+            this.txtQue2.Size = new System.Drawing.Size(19, 13);
+            this.txtQue2.TabIndex = 59;
+            this.txtQue2.Text = "00";
+            this.txtQue2.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Location = new System.Drawing.Point(960, 132);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(88, 13);
+            this.label14.TabIndex = 60;
+            this.label14.Text = "Processing Time:";
+            this.label14.Visible = false;
+            // 
             // InspectModel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -627,6 +652,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtQue2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtQue);
             this.Controls.Add(this.menuStrip1);
@@ -682,8 +709,8 @@
         private System.Windows.Forms.Label labelOkCount;
         private System.Windows.Forms.Label labelTotalCount;
         private System.Windows.Forms.PictureBox pictureBoxTwo;
-        private System.Windows.Forms.Button BTN_STAR;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label13;
@@ -702,5 +729,7 @@
         private System.Windows.Forms.TextBox textBoxModelNum2;
         private System.Windows.Forms.TextBox textBoxSrNum;
         private System.Windows.Forms.TextBox textBoxModelNum1;
+        private System.Windows.Forms.Label txtQue2;
+        private System.Windows.Forms.Label label14;
     }
 }

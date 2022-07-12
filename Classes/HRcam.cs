@@ -353,7 +353,9 @@ namespace SalcompTwoCam
 
         public void SetOutput(ref MyCamera m_MyCamera)
         {
-            int nRet = m_MyCamera.MV_CC_SetCommandValue_NET("LineTriggerSoftware");
+             m_MyCamera.MV_CC_SetEnumValue_NET("LineSelector", 1);
+
+             m_MyCamera.MV_CC_SetCommandValue_NET("LineTriggerSoftware");
 
         }
 

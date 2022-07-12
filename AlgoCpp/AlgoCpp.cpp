@@ -73,7 +73,9 @@ vector <Mat> toolTemplateC1;
 vector <Mat> toolTemplateC2;
 System::String^ __clrcall AlgoCpp::SalcomCpp::ProcessImage(System::Drawing::Bitmap^ sourceImage_bitmap, System::String^ json_model_data, int camCode)
 {
-	bool resultArray[] = { true, true };
+	//bool resultArray[] = { true, true };
+//	bool resultArray[] = { true, true };
+	vector<bool> resultArray = vector<bool>();
 
 	using System::Runtime::InteropServices::Marshal;
 	System::IntPtr pointer_for_model_name = Marshal::StringToHGlobalAnsi(json_model_data);
@@ -161,7 +163,7 @@ System::String^ __clrcall AlgoCpp::SalcomCpp::ProcessImage(System::Drawing::Bitm
 			putText(draw, cv::format("%3.2f", scoreL), Point(rect_partLoc.x + locL.x, rect_partLoc.y + locL.y), FONT_HERSHEY_COMPLEX, 1, color_res, 2);
 			idxT++;
 			
-			resultArray[0] = resultL;
+			resultArray.push_back( resultL);
 		}
 		//_Utils_obj.resShow("result", draw, 1);
 		for each (ModelData::CheckCheckEdge var in modelData.get_check_check_edges())
@@ -190,15 +192,16 @@ System::String^ __clrcall AlgoCpp::SalcomCpp::ProcessImage(System::Drawing::Bitm
 			rectangle(draw(rect_partLoc), r, color_res, 1);
 
 			bool resultE = (resEdge == 1);
-			resultArray[1] = resultE;
+			resultArray.push_back(resultE);
 
 		}
 
-		cout << "Result Arr 1 " << resultArray[0] << "Result Arr 2 " << resultArray[1] << endl;
+		cout << "Result Arr size " << resultArray.size()<< endl;
 
 		//modelData.set_results(resultList);
-		for (size_t i = 0; i < sizeof(resultArray); i++)
+		for (size_t i = 0; i < resultArray.size(); i++)
 		{
+			cout << "result " << i << "   ::" << resultArray[i] << endl;
 			if (resultArray[i] == true)
 			{
 				modelData.set_result(true);
